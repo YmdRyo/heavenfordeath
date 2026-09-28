@@ -114,3 +114,44 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* UI */
+#game-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    z-index: 100;
+}
+
+.img-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.img-button img {
+    display: block;
+    max-height: 48px;
+    width: auto;
+}
+
+.img-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.img-button:active {
+    transform: scale(0.95);
+}
+
+/* Hide fullscreen button */
+:fullscreen #game-controls,
+:-webkit-full-screen #game-controls {
+    display: none !important;
+}

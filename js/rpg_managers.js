@@ -1692,7 +1692,7 @@ SceneManager.onSceneStart = function() {
 };
 
 SceneManager.onSceneLoading = function() {
-    Graphics.updateLoading();
+    // Graphics.updateLoading();
 };
 
 SceneManager.isSceneChanging = function() {

@@ -62,6 +62,12 @@
                         document.webkitExitFullscreen();
                     }
                 }
+
+                setTimeout(function() {
+                    if (typeof Graphics !== 'undefined' && Graphics._updateAllElements) {
+                        Graphics._updateAllElements();
+                    }
+                }, 100);
             }
         </script>
     </body>

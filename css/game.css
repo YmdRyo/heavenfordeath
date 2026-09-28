@@ -167,3 +167,18 @@ body {
 :-webkit-full-screen #game-controls {
     display: none !important;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+canvas {
+    max-height: 100vh !important;
+    max-width: 100vw !important;
+    object-fit: contain;
+}

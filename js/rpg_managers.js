@@ -723,22 +723,23 @@ ImageManager.loadParallax = function(filename, hue) {
 
 ImageManager.loadPicture = function(filename, hue) {
     var lang = window.currentLanguage;
-    var primaryFolder = (lang && lang !== 'en') ? 'img/pictures/' + lang + '/' : 'img/pictures/';
+    var baseFolder = 'img/pictures/';
     
-    var bitmap = this.loadBitmap(primaryFolder, filename, hue, true);
-    
-    if (lang && lang !== 'en') {
-        bitmap.addLoadListener(function() {
-            if (bitmap.isError()) {
-                bitmap._hasError = false;
-                bitmap._isLoading = false;
-                bitmap._url = 'img/pictures/' + encodeURIComponent(filename) + '.png';
-                bitmap._loadListener = null;
-                ImageManager.requestNormalBitmap(bitmap._url, hue);
-            }
-        });
+    if (!lang || lang === 'en') {
+        return this.loadBitmap(baseFolder, filename, hue, true);
     }
-    
+
+    var langFolder = baseFolder + lang + '/';
+    var bitmap = this.loadBitmap(langFolder, filename, hue, true);
+
+    var originalOnError = bitmap._onError;
+    bitmap._onError = function() {
+        bitmap._hasError = false;
+        bitmap._isLoading = true;
+        bitmap._url = baseFolder + encodeURIComponent(filename) + '.png';
+        bitmap._startLoading();
+    };
+
     return bitmap;
 };
 

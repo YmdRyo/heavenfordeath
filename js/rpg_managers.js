@@ -724,40 +724,15 @@ ImageManager.loadParallax = function(filename, hue) {
 ImageManager.loadPicture = function(filename, hue) {
     var lang = window.currentLanguage;
     var baseFolder = 'img/pictures/';
-    
-    if (!lang || lang === 'en') {
-        return this.loadBitmap(baseFolder, filename, hue, true);
+
+    if (lang && window.translatedPictures && window.translatedPictures[lang]) {
+        var hasTranslation = window.translatedPictures[lang].includes(filename);
+        if (hasTranslation) {
+            return this.loadBitmap(baseFolder + lang + '/', filename, hue, true);
+        }
     }
 
-    var langFolder = baseFolder + lang + '/';
-    var urlLang = langFolder + encodeURIComponent(filename) + '.png';
-    var urlBase = baseFolder + encodeURIComponent(filename) + '.png';
-
-    var bitmap = this.loadBitmap(langFolder, filename, hue, true);
-
-    bitmap.addLoadListener(function() {
-        if (bitmap.isError()) {
-            bitmap._hasError = false;
-            bitmap._isLoading = true;
-            bitmap._loader = null;
-            
-            var img = new Image();
-            img.src = urlBase;
-            img.onload = function() {
-                bitmap._image = img;
-                bitmap._url = urlBase;
-                bitmap._isLoading = false;
-                bitmap._hasError = false;
-                bitmap._callLoadListeners();
-            };
-            img.onerror = function() {
-                bitmap._hasError = true;
-                bitmap._isLoading = false;
-            };
-        }
-    });
-
-    return bitmap;
+    return this.loadBitmap(baseFolder, filename, hue, true);
 };
 
 ImageManager.loadSvActor = function(filename, hue) {

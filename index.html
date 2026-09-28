@@ -27,6 +27,7 @@
         <script type="text/javascript" src="js/rpg_windows.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/mobile_controls.js"></script>
 
         <!-- Languages -->
         <div id="language-selector" class="lang-overlay">
@@ -70,6 +71,40 @@
             <button onclick="toggleFullScreen()" class="img-button">
                 <img src="img/system/btn_fullscreen.png" alt="Pantalla Completa">
             </button>
+        </div>
+
+        <!-- Phone layer -->
+        <div id="touch-controls-container">
+            <!-- Capa grisácea semi-transparente (solo visible en modo edición) -->
+            <div id="editOverlay" style="display: none;"></div>
+
+            <!-- Botón para abrir/cerrar edición -->
+            <img id="btnEdit" src="img/system/ic_edit.png" alt="Edit" onclick="toggleEditMode()">
+
+            <!-- Panel de controles en la parte superior durante la edición -->
+            <div id="editControlsLayout" class="edit-panel" style="display: none;">
+                <div class="slider-group">
+                    <label>Tamaño</label>
+                    <input type="range" id="sizeSlider" min="0.5" max="1.8" step="0.1" value="1" oninput="updateActiveElementSize(this.value)">
+                </div>
+                <div class="slider-group">
+                    <label>Opacidad</label>
+                    <input type="range" id="alphaSlider" min="0.2" max="1" step="0.1" value="1" oninput="updateActiveElementAlpha(this.value)">
+                </div>
+                <div class="btn-group">
+                    <button id="btnReset" onclick="resetControlPositions()">Reset</button>
+                    <button id="btnCancel" onclick="cancelEditMode()">Cancel</button>
+                    <button id="btnApply" onclick="saveControlPositions()">Apply</button>
+                </div>
+            </div>
+
+            <!-- Botones de juego móviles -->
+            <img id="dpad_up" class="touch-btn" src="img/system/dpad_up.png" data-key="38">
+            <img id="dpad_down" class="touch-btn" src="img/system/dpad_down.png" data-key="40">
+            <img id="dpad_left" class="touch-btn" src="img/system/dpad_left.png" data-key="37">
+            <img id="dpad_right" class="touch-btn" src="img/system/dpad_right.png" data-key="39">
+            <img id="btnZ" class="touch-btn" src="img/system/btn_z.png" data-key="90">
+            <img id="btnX" class="touch-btn" src="img/system/btn_x.png" data-key="88">
         </div>
 
         <!-- Fullscreen -->

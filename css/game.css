@@ -118,11 +118,28 @@ body {
 /* UI */
 #credits {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    z-index: 100;
+    z-index: 10000 !important;
+    pointer-events: none;
+}
+
+#credits img,
+#credits button,
+#credits a {
+    pointer-events: auto;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+#credits img:hover,
+#credits button:hover,
+#credits a:hover {
+    transform: scale(0.85) !important; /* Se hace más pequeño */
+    filter: brightness(1.2);
 }
 
 .img-button {
@@ -219,4 +236,134 @@ canvas {
     gap: 20px;
     justify-content: center;
     margin-top: 25px;
+}
+
+#credits {
+    position: fixed;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10000 !important;
+}
+
+/* Mobile controls */
+#touch-controls-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 8000;
+}
+
+#editOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
+    z-index: 8100;
+}
+
+/* Edit buttons */
+#btnEdit {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    opacity: 0.3;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 8500;
+}
+
+/* D-Pad */
+.touch-btn {
+    position: absolute;
+    touch-action: none;
+    user-select: none;
+    pointer-events: auto;
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+    z-index: 8200;
+    transition: filter 0.1s ease, opacity 0.1s ease;
+}
+
+.touch-btn:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+.touch-btn:active,
+.touch-btn.btn-pressed {
+    filter: brightness(1.6);
+    transform: scale(0.95) !important;
+}
+
+#dpad_up    { bottom: 130px; left: 80px; }
+#dpad_down  { bottom: 30px;  left: 80px; }
+#dpad_left  { bottom: 80px;  left: 30px; }
+#dpad_right { bottom: 80px;  left: 130px; }
+
+#btnZ       { bottom: 48px;  right: 50px; width: 80px; }
+#btnX       { bottom: 24px;  right: 140px; width: 80px; }
+
+.edit-panel {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+    pointer-events: auto;
+    z-index: 8500;
+}
+
+.slider-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.btn-group button {
+    background: #061021;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-mode-active .touch-btn {
+    outline: 2px dashed #00ff00;
+    cursor: move !important;
+    z-index: 8300;
+}
+
+.touch-btn.selected-target {
+    outline: 2px solid #ffff00 !important;
 }

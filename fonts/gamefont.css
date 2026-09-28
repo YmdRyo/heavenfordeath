@@ -1,4 +1,8 @@
+:root {
+    --active-game-font: url("TT_Pearl-L.ttf");
+}
+
 @font-face {
     font-family: GameFont;
-    src: url("TT_Pearl-L.ttf");
+    src: var(--active-game-font);
 }

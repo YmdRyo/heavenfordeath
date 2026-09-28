@@ -104,9 +104,30 @@
 
             function selectLanguage(lang) {
                 window.currentLanguage = lang;
-                
+
+                var fontFile = "TT_Pearl-L.ttf";
+
+                if (lang === 'en') {
+                    fontFile = "TT_Pearl-L.ttf";
+                } else if (lang === 'pt') {
+                    fontFile = "TT_Pearl-L.ttf"; // Nombre de tu archivo de fuente para portugués
+                } else if (lang === 'es') {
+                    fontFile = "TT_Pearl-L.ttf";
+                } else if (lang === 'ru') {
+                    fontFile = "MazardM-Light.ttf";
+                } else if (lang === 'cn') {
+                    fontFile = "24.ttf";
+                } else if (lang === 'jp') {
+                    fontFile = "TT_Pearl-L.woff";
+                }
+
+                // Actualizar la variable CSS para cambiar la fuente global
+                document.documentElement.style.setProperty('--active-game-font', 'url("' + fontFile + '")');
+
+                // Ocultar la pantalla flotante de selección
                 document.getElementById('language-selector').style.display = 'none';
-                
+
+                // Recargar la base de datos de RPG Maker con la nueva fuente e idioma
                 if (typeof DataManager !== 'undefined' && DataManager.loadDatabase) {
                     DataManager.loadDatabase();
                 }

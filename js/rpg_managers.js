@@ -77,7 +77,6 @@ DataManager.loadDatabase = function() {
 
 DataManager.loadDataFile = function(name, src) {
     var xhr = new XMLHttpRequest();
-    // Apunta a data/es/, data/en/, data/pt/, etc.
     var langFolder = window.currentLanguage ? 'data/' + window.currentLanguage + '/' : 'data/';
     var url = langFolder + src;
     

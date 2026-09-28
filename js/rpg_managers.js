@@ -722,7 +722,24 @@ ImageManager.loadParallax = function(filename, hue) {
 };
 
 ImageManager.loadPicture = function(filename, hue) {
-    return this.loadBitmap('img/pictures/', filename, hue, true);
+    var lang = window.currentLanguage;
+    var primaryFolder = (lang && lang !== 'en') ? 'img/pictures/' + lang + '/' : 'img/pictures/';
+    
+    var bitmap = this.loadBitmap(primaryFolder, filename, hue, true);
+    
+    if (lang && lang !== 'en') {
+        bitmap.addLoadListener(function() {
+            if (bitmap.isError()) {
+                bitmap._hasError = false;
+                bitmap._isLoading = false;
+                bitmap._url = 'img/pictures/' + encodeURIComponent(filename) + '.png';
+                bitmap._loadListener = null;
+                ImageManager.requestNormalBitmap(bitmap._url, hue);
+            }
+        });
+    }
+    
+    return bitmap;
 };
 
 ImageManager.loadSvActor = function(filename, hue) {

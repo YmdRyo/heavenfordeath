@@ -105,28 +105,35 @@
             function selectLanguage(lang) {
                 window.currentLanguage = lang;
 
-                var fontName = "GameFont";
+                var fontFile = "TT_Pearl-L.ttf";
 
                 if (lang === 'en') {
-                    fontName = "GameFont_EN";
+                    fontFile = "TT_Pearl-L.ttf";
                 } else if (lang === 'pt') {
-                    fontName = "GameFont_PT";
+                    fontFile = "TT_Pearl-L.ttf";
                 } else if (lang === 'es') {
-                    fontName = "GameFont_ES";
-                } else if (lang === 'cn') {
-                    fontName = "GameFont_CN";
-                } else if (lang === 'jp') {
-                    fontName = "GameFont_JP";
+                    fontFile = "TT_Pearl-L.ttf";
                 } else if (lang === 'ru') {
-                    fontName = "GameFont_RU";
+                    fontFile = "MazardM-Light.ttf";
+                } else if (lang === 'cn') {
+                    fontFile = "24.ttf";
+                } else if (lang === 'jp') {
+                    fontFile = "TT_Pearl-L.woff";
                 }
 
-                if (typeof Graphics !== 'undefined') {
-                    Graphics.defaultFontFace = fontName + ", sans-serif";
+                var dynamicStyle = document.getElementById('dynamic-font-style');
+                if (!dynamicStyle) {
+                    dynamicStyle = document.createElement('style');
+                    dynamicStyle.id = 'dynamic-font-style';
+                    document.head.appendChild(dynamicStyle);
                 }
-                if (typeof FontManager !== 'undefined') {
-                    FontManager._states[fontName] = "loaded";
-                }
+                
+                dynamicStyle.innerHTML = `
+                    @font-face {
+                        font-family: GameFont;
+                        src: url('fonts/${fontFile}');
+                    }
+                `;
 
                 document.getElementById('language-selector').style.display = 'none';
 

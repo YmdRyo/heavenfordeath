@@ -77,7 +77,8 @@ DataManager.loadDatabase = function() {
 
 DataManager.loadDataFile = function(name, src) {
     var xhr = new XMLHttpRequest();
-    var url = 'data/' + src;
+    var langFolder = window.currentLanguage ? 'data/' + window.currentLanguage + '/' : 'data/';
+    var url = langFolder + src;
     xhr.open('GET', url);
     xhr.overrideMimeType('application/json');
     xhr.onload = function() {

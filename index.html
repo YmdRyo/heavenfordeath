@@ -28,6 +28,18 @@
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
+        <!-- Languages -->
+        <div id="language-selector" class="lang-overlay">
+            <div class="lang-box">
+                <h2>Select Language / Selecciona Idioma</h2>
+                <div class="lang-buttons">
+                    <button onclick="selectLanguage('es')">Español</button>
+                    <button onclick="selectLanguage('en')">English</button>
+                    <button onclick="selectLanguage('pt')">Português</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Buttons -->
         <div id="credits">
             <a href="https://yiminghack.itch.io/heaven-for-death" target="_blank" class="img-button">
@@ -68,6 +80,27 @@
                         Graphics._updateAllElements();
                     }
                 }, 100);
+            }
+        </script>
+
+        <!-- Language -->
+        <script type="text/javascript">
+            window.currentLanguage = localStorage.getItem('game_lang') || null;
+
+            if (window.currentLanguage) {
+                document.addEventListener("DOMContentLoaded", function() {
+                    var selector = document.getElementById('language-selector');
+                    if (selector) selector.style.display = 'none';
+                });
+            }
+
+            function selectLanguage(lang) {
+                window.currentLanguage = lang;
+                localStorage.setItem('game_lang', lang);
+                
+                document.getElementById('language-selector').style.display = 'none';
+                
+                location.reload();
             }
         </script>
     </body>

@@ -193,3 +193,45 @@ canvas {
     width: auto !important;
     height: 100vh !important;
 }
+
+/* Language selection screen */
+.lang-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang-box {
+    text-align: center;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+.lang-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.lang-buttons button {
+    background: #222;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.lang-buttons button:hover {
+    background: #444;
+}

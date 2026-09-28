@@ -1173,8 +1173,7 @@ AudioManager.audioFileExt = function() {
 AudioManager.shouldUseHtml5Audio = function() {
     // We use HTML5 Audio to play BGM instead of Web Audio API
     // because decodeAudioData() is very slow on Android Chrome.
-    // return Utils.isAndroidChrome();
-    return true;
+    return Utils.isAndroidChrome();
 };
 
 AudioManager.checkErrors = function() {

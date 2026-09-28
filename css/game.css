@@ -154,6 +154,12 @@ body {
     top: 20px;
     right: 20px;
     z-index: 100;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+#fullscreen-btn:hover {
+    opacity: 0.9;
 }
 
 /* Hide fullscreen button */

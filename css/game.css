@@ -158,8 +158,6 @@ body {
 
 /* Hide fullscreen button */
 :fullscreen #credits,
-:fullscreen #fullscreen-btn,
-:-webkit-full-screen #game-controls,
-:-webkit-full-screen #fullscreen-btn {
+:-webkit-full-screen #game-controls {
     display: none !important;
 }

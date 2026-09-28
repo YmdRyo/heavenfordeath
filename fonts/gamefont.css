@@ -1,8 +1,34 @@
-:root {
-    --active-game-font: url("TT_Pearl-L.ttf");
+@font-face {
+    font-family: GameFont;
+    src: url("TT_Pearl-L.ttf");
 }
 
 @font-face {
-    font-family: GameFont;
-    src: var(--active-game-font);
+    font-family: GameFont_EN;
+    src: url("TT_Pearl-L.ttf");
+}
+
+@font-face {
+    font-family: GameFont_ES;
+    src: url("TT_Pearl-L.ttf");
+}
+
+@font-face {
+    font-family: GameFont_PT;
+    src: url("TT_Pearl-L.ttf");
+}
+
+@font-face {
+    font-family: GameFont_CN;
+    src: url("24.ttf");
+}
+
+@font-face {
+    font-family: GameFont_JP;
+    src: url("TT_Pearl-L.woff");
+}
+
+@font-face {
+    font-family: GameFont_RU;
+    src: url("MazardM-Light.ttf");
 }

@@ -105,29 +105,31 @@
             function selectLanguage(lang) {
                 window.currentLanguage = lang;
 
-                var fontFile = "TT_Pearl-L.ttf";
+                var fontName = "GameFont";
 
                 if (lang === 'en') {
-                    fontFile = "TT_Pearl-L.ttf";
+                    fontName = "GameFont_EN";
                 } else if (lang === 'pt') {
-                    fontFile = "TT_Pearl-L.ttf"; // Nombre de tu archivo de fuente para portugués
+                    fontName = "GameFont_PT";
                 } else if (lang === 'es') {
-                    fontFile = "TT_Pearl-L.ttf";
-                } else if (lang === 'ru') {
-                    fontFile = "MazardM-Light.ttf";
+                    fontName = "GameFont_ES";
                 } else if (lang === 'cn') {
-                    fontFile = "24.ttf";
+                    fontName = "GameFont_CN";
                 } else if (lang === 'jp') {
-                    fontFile = "TT_Pearl-L.woff";
+                    fontName = "GameFont_JP";
+                } else if (lang === 'ru') {
+                    fontName = "GameFont_RU";
                 }
 
-                // Actualizar la variable CSS para cambiar la fuente global
-                document.documentElement.style.setProperty('--active-game-font', 'url("' + fontFile + '")');
+                if (typeof Graphics !== 'undefined') {
+                    Graphics.defaultFontFace = fontName + ", sans-serif";
+                }
+                if (typeof FontManager !== 'undefined') {
+                    FontManager._states[fontName] = "loaded";
+                }
 
-                // Ocultar la pantalla flotante de selección
                 document.getElementById('language-selector').style.display = 'none';
 
-                // Recargar la base de datos de RPG Maker con la nueva fuente e idioma
                 if (typeof DataManager !== 'undefined' && DataManager.loadDatabase) {
                     DataManager.loadDatabase();
                 }

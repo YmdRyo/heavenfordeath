@@ -1,0 +1,6 @@
+[
+null,
+{"id":1,"battlerName":"","characterIndex":0,"characterName":"SF_Actor1","classId":5,"equips":[1,1,2,3,0],"faceIndex":0,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Ryou","nickname":"","note":"","profile":"Human who Borrowed Money and Killed Themselves To Escape"},
+{"id":2,"battlerName":"Actor1_8","characterIndex":1,"characterName":"SF_Damage2","classId":2,"equips":[2,1,2,3,0],"faceIndex":1,"faceName":"Actor3","traits":[],"initialLevel":99,"maxLevel":99,"name":"\"Shimokitazawa\"","nickname":"\"Shimokitazawa\"","note":"","profile":"A Passing Angel"},
+{"id":3,"battlerName":"","characterIndex":1,"characterName":"SF_Damage3","classId":5,"equips":[0,0,0,0,0],"faceIndex":1,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":99,"name":"Ijichi Nijika","nickname":"","note":"","profile":""}
+]

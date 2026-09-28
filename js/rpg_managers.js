@@ -77,8 +77,10 @@ DataManager.loadDatabase = function() {
 
 DataManager.loadDataFile = function(name, src) {
     var xhr = new XMLHttpRequest();
+    // Apunta a data/es/, data/en/, data/pt/, etc.
     var langFolder = window.currentLanguage ? 'data/' + window.currentLanguage + '/' : 'data/';
     var url = langFolder + src;
+    
     xhr.open('GET', url);
     xhr.overrideMimeType('application/json');
     xhr.onload = function() {
@@ -87,9 +89,7 @@ DataManager.loadDataFile = function(name, src) {
             DataManager.onLoad(window[name]);
         }
     };
-    xhr.onerror = function() {
-        DataManager._errorUrl = DataManager._errorUrl || url;
-    };
+    xhr.onerror = this._mapLoaded ? Graphics.printLoadingError.bind(Graphics, url) : undefined;
     window[name] = null;
     xhr.send();
 };

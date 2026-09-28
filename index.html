@@ -33,9 +33,15 @@
             <div class="lang-box">
                 <h2>Select Language / Selecciona Idioma</h2>
                 <div class="lang-buttons">
-                    <button onclick="selectLanguage('es')">Español</button>
-                    <button onclick="selectLanguage('en')">English</button>
-                    <button onclick="selectLanguage('pt')">Português</button>
+                    <button onclick="selectLanguage('es')" class="img-button">
+                        <img src="img/system/lang_es.png" alt="Español">
+                    </button>
+                    <button onclick="selectLanguage('en')" class="img-button">
+                        <img src="img/system/lang_en.png" alt="English">
+                    </button>
+                    <button onclick="selectLanguage('pt')" class="img-button">
+                        <img src="img/system/lang_pt.png" alt="Português">
+                    </button>
                 </div>
             </div>
         </div>
@@ -85,22 +91,16 @@
 
         <!-- Language -->
         <script type="text/javascript">
-            window.currentLanguage = localStorage.getItem('game_lang') || null;
-
-            if (window.currentLanguage) {
-                document.addEventListener("DOMContentLoaded", function() {
-                    var selector = document.getElementById('language-selector');
-                    if (selector) selector.style.display = 'none';
-                });
-            }
+            window.currentLanguage = '';
 
             function selectLanguage(lang) {
                 window.currentLanguage = lang;
-                localStorage.setItem('game_lang', lang);
                 
                 document.getElementById('language-selector').style.display = 'none';
                 
-                location.reload();
+                if (typeof DataManager !== 'undefined' && DataManager.loadDatabase) {
+                    DataManager.loadDatabase();
+                }
             }
         </script>
     </body>

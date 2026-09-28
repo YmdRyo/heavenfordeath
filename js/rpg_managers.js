@@ -730,15 +730,32 @@ ImageManager.loadPicture = function(filename, hue) {
     }
 
     var langFolder = baseFolder + lang + '/';
+    var urlLang = langFolder + encodeURIComponent(filename) + '.png';
+    var urlBase = baseFolder + encodeURIComponent(filename) + '.png';
+
     var bitmap = this.loadBitmap(langFolder, filename, hue, true);
 
-    var originalOnError = bitmap._onError;
-    bitmap._onError = function() {
-        bitmap._hasError = false;
-        bitmap._isLoading = true;
-        bitmap._url = baseFolder + encodeURIComponent(filename) + '.png';
-        bitmap._startLoading();
-    };
+    bitmap.addLoadListener(function() {
+        if (bitmap.isError()) {
+            bitmap._hasError = false;
+            bitmap._isLoading = true;
+            bitmap._loader = null;
+            
+            var img = new Image();
+            img.src = urlBase;
+            img.onload = function() {
+                bitmap._image = img;
+                bitmap._url = urlBase;
+                bitmap._isLoading = false;
+                bitmap._hasError = false;
+                bitmap._callLoadListeners();
+            };
+            img.onerror = function() {
+                bitmap._hasError = true;
+                bitmap._isLoading = false;
+            };
+        }
+    });
 
     return bitmap;
 };

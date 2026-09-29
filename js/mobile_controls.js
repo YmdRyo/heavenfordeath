@@ -1,4 +1,17 @@
-// Desactivar el control táctil nativo del mapa en RPG Maker MZ
+if (typeof AudioManager !== 'undefined') {
+    AudioManager._bgmBuffer = null;
+    
+    AudioManager.audioFileExt = function() {
+        return ".ogg";
+    };
+}
+
+if (typeof WebAudio !== 'undefined') {
+    WebAudio._canPlayOgg = function() {
+        return true;
+    };
+}
+
 if (typeof TouchInput !== 'undefined') {
     TouchInput._onTrigger = function() {};
     TouchInput._onMouseDown = function() {};
@@ -8,10 +21,8 @@ if (typeof TouchInput !== 'undefined') {
 let isTouchInitialized = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Escucha permanente de toques para activar/mostrar los controles
     window.addEventListener('touchstart', showTouchControls, { passive: true });
     
-    // Escucha permanente de teclado para ocultar los controles
     window.addEventListener('keydown', hideTouchControls, { passive: true });
 });
 
@@ -21,7 +32,6 @@ function showTouchControls() {
         touchContainer.style.display = 'block';
     }
 
-    // Inicializamos listeners del layout solo la primera vez que se toca la pantalla
     if (!isTouchInitialized) {
         isTouchInitialized = true;
 
@@ -38,7 +48,6 @@ function showTouchControls() {
 }
 
 function hideTouchControls(event) {
-    // Evitamos ocultar los controles si el usuario está editando textos o valores
     if (isEditMode) return;
 
     const touchContainer = document.getElementById('touch-controls-container');
@@ -54,14 +63,13 @@ let dragOffsetX = 0;
 let dragOffsetY = 0;
 let defaultLayout = {};
 
-// Mapeo de teclas a nombres internos de RPG Maker MZ
 const KEY_MAP = {
     '38': 'up',
     '40': 'down',
     '37': 'left',
     '39': 'right',
-    '90': 'ok',     // Botón Z / Aceptar
-    '88': 'escape' // Botón X / Cancelar / Menú
+    '90': 'ok',
+    '88': 'escape'
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,7 +96,6 @@ function saveDefaultPositions() {
     });
 }
 
-// Envío de eventos directamente al motor de RPG Maker MZ (Input._currentState)
 function pressEngineKey(keyCode) {
     const keyName = KEY_MAP[keyCode];
     if (typeof Input !== 'undefined' && keyName) {
@@ -109,7 +116,6 @@ function initTouchEvents() {
     buttons.forEach(btn => {
         const key = btn.getAttribute('data-key');
 
-        // Touch (Móviles)
         btn.addEventListener('touchstart', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -142,7 +148,6 @@ function initTouchEvents() {
             stopDrag();
         });
 
-        // Mouse (PC / Pruebas)
         btn.addEventListener('mousedown', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -177,11 +182,9 @@ function initTouchEvents() {
         });
     });
 
-    // Control de arrastre global
     window.addEventListener('touchmove', handleDrag, { passive: false });
     window.addEventListener('mousemove', handleDrag);
     
-    // Detención forzada de arrastre al soltar fuera del elemento
     window.addEventListener('touchend', stopDrag, { passive: false });
     window.addEventListener('mouseup', stopDrag);
 }
@@ -291,10 +294,8 @@ function loadLayout() {
 }
 
 function resetControlPositions() {
-    // Borramos el layout personalizado de localStorage
     localStorage.removeItem('mobile_touch_layout');
     
-    // Limpiamos los estilos inyectados por JavaScript en cada botón
     document.querySelectorAll('.touch-btn').forEach(btn => {
         btn.style.top = '';
         btn.style.bottom = '';
@@ -307,7 +308,6 @@ function resetControlPositions() {
         btn.dataset.alpha = 1;
     });
 
-    // Reseteamos los sliders del panel de edición a sus valores base
     const sizeSlider = document.getElementById('sizeSlider');
     const alphaSlider = document.getElementById('alphaSlider');
     

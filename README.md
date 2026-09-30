@@ -1,6 +1,8 @@
-# Heaven for Death [BROWSER]
+# [Heaven for Death [BROWSER]](https://ymdryo.github.io/heavenfordeath/)
 
 Heaven for Death tells the story of Ryo Yamada, a girl who now finds herself in heaven (somehow) and has to prove god's wrong. Luckily for her, she has a "long-lost" friend that not even her remembers...
+
+[Play here](https://ymdryo.github.io/heavenfordeath/)
 
 There's a secret note at the end of the game, to unlock it you need a code.
 

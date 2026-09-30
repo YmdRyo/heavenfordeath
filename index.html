@@ -108,20 +108,17 @@
 
         <!-- Phone layer -->
         <div id="touch-controls-container">
-            <!-- Capa grisácea semi-transparente (solo visible en modo edición) -->
             <div id="editOverlay" style="display: none;"></div>
 
-            <!-- Botón para abrir/cerrar edición -->
             <img id="btnEdit" src="img/system/ic_edit.png" alt="Edit" onclick="toggleEditMode()">
 
-            <!-- Panel de controles en la parte superior durante la edición -->
             <div id="editControlsLayout" class="edit-panel" style="display: none;">
                 <div class="slider-group">
-                    <label>Tamaño</label>
+                    <label id="lblSize">Tamaño</label>
                     <input type="range" id="sizeSlider" min="0.5" max="1.8" step="0.1" value="1" oninput="updateActiveElementSize(this.value)">
                 </div>
                 <div class="slider-group">
-                    <label>Opacidad</label>
+                    <label id="lblAlpha">Opacidad</label>
                     <input type="range" id="alphaSlider" min="0.2" max="1" step="0.1" value="1" oninput="updateActiveElementAlpha(this.value)">
                 </div>
                 <div class="btn-group">
@@ -204,6 +201,10 @@
                 `;
 
                 document.getElementById('language-selector').style.display = 'none';
+
+                if (typeof updateTouchControlsLanguage === 'function') {
+                    updateTouchControlsLanguage(lang);
+                }
 
                 if (typeof DataManager !== 'undefined' && DataManager.loadDatabase) {
                     DataManager.loadDatabase();

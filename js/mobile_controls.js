@@ -330,3 +330,28 @@ function exitEditView() {
     document.getElementById('editControlsLayout').style.display = 'none';
     document.getElementById('editOverlay').style.display = 'none';
 }
+
+const touchTranslations = {
+    'en': { size: 'Size', opacity: 'Opacity', reset: 'Reset', cancel: 'Cancel', apply: 'Apply' },
+    'es': { size: 'Tamaño', opacity: 'Opacidad', reset: 'Restablecer', cancel: 'Cancelar', apply: 'Aplicar' },
+    'cn': { size: '大小', opacity: '不透明度', reset: '重置', cancel: '取消', apply: '应用' },
+    'jp': { size: 'サイズ', opacity: '不透明度', reset: 'リセット', cancel: 'キャンセル', apply: '適用' },
+    'ru': { size: 'Размер', opacity: 'Прозрачность', reset: 'Сброс', cancel: 'Отмена', apply: 'Применить' },
+    'pt': { size: 'Tamanho', opacity: 'Opacidade', reset: 'Redefinir', cancel: 'Cancelar', apply: 'Aplicar' }
+};
+
+function updateTouchControlsLanguage(lang) {
+    const t = touchTranslations[lang] || touchTranslations['en'];
+    
+    const lblSize = document.getElementById('lblSize');
+    const lblAlpha = document.getElementById('lblAlpha');
+    const btnReset = document.getElementById('btnReset');
+    const btnCancel = document.getElementById('btnCancel');
+    const btnApply = document.getElementById('btnApply');
+
+    if (lblSize) lblSize.textContent = t.size;
+    if (lblAlpha) lblAlpha.textContent = t.opacity;
+    if (btnReset) btnReset.textContent = t.reset;
+    if (btnCancel) btnCancel.textContent = t.cancel;
+    if (btnApply) btnApply.textContent = t.apply;
+}

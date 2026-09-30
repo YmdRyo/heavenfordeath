@@ -16,12 +16,12 @@ There's a secret note at the end of the game, to unlock it you need a code.
 I'm not affiliated in any way with the developers, I'm just a guy who wanted more people to play this and that's it, so all credits go to:
 
 Chinese Version Production Staff:
-- Refrigerator soy <a href="https://x.com/S_RefriGE" target="_blank" rel="noopener noreferrer">@S_RefriGE</a> (weibo@ your_killing_method_has_no_love_for_me, LOF@ frozen_in_fridge)
-- Greyhound 三角三白鹿 <a href="https://x.com/l_greyhound" target="_blank" rel="noopener noreferrer">@l_greyhound</a> (weibo@ sanjiasanbailu, LOF@ miss_your_dog_dropped)
-- Dust (weibo@ what_can_I_do_I_am_just, LOF@ C)
+- Refrigerator soy [@S_RefriGE](https://x.com/S_RefriGE) (weibo@你的杀人手法里没有对我的爱, LOF@冰箱里的速冻)
+- Greyhound 三角三白鹿 @l_greyhound (weibo@三角三白鹿, LOF@小姐你的狗掉了)
+- Dust (weibo@我能干什么我只是, LOF@C)
 
 Japanese Version Production Staff:
-- rio <a href="https://x.com/rio_HKNR" target="_blank" rel="noopener noreferrer">@rio_HKNR</a> (Translation / General Game Adjustments)
+- rio [@rio_HKNR](https://x.com/rio_HKNR) (Translation / General Game Adjustments)
 - LCH @Lch_twitt_er (Translation Supervision)
 - @threetententen (Tester)
 
@@ -31,19 +31,19 @@ Japanese Version Production Staff:
 - Evan @EBAN_sun (IN Sound Source Provider)
 - canaan @canaan1008 (ED Sound Source Provider)
 
-English Localization: <a href="https://x.com/rain2434bow" target="_blank" rel="noopener noreferrer">@rain2434bow</a>
+English Localization: [@rain2434bow](https://x.com/rain2434bow)
 
-Spanish Localization: ImDavid (<a href="https://x.com/ryothebassist" target="_blank" rel="noopener noreferrer">@ryothebassist</a> on X and @imdavid on Discord)
+Spanish Localization: ImDavid ([@ryothebassist](https://x.com/ryothebassist) on X and @imdavid on Discord)
 
 Portuguese Localization: @isa_bi21 on Discord
 
-Russian Localization: <a href="https://t.me/porfenal" target="_blank" rel="noopener noreferrer">kirrel50</a>, <a href="https://t.me/Tetonationdetonation_tl" target="_blank" rel="noopener noreferrer">KEL</a> and <a href="https://vk.com/heaven_for_death" target="_blank" rel="noopener noreferrer">Damir Dorcas</a>
+Russian Localization: [kirrel50](https://t.me/porfenal), [KEL](https://t.me/Tetonationdetonation_tl) and [Damir Dorcas](https://vk.com/heaven_for_death)
 
-Official <a href="https://yiminghack.itch.io/heaven-for-death" target="_blank" rel="noopener noreferrer">Itch.io</a> download page
+Official [Itch.io](https://yiminghack.itch.io/heaven-for-death) download page
 
 Development Tool: RPG Maker MV
 
-This website and the Android port: ImDavid (<a href="https://x.com/ryothebassist" target="_blank" rel="noopener noreferrer">@ryothebassist</a> on X and @imdavid on Discord)
+This website and the Android port: ImDavid ([@ryothebassist](https://x.com/ryothebassist) on X and @imdavid on Discord)
 
 what a great person this ImDavid guy
 

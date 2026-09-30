@@ -2,7 +2,7 @@
 
 Heaven for Death tells the story of Ryo Yamada, a girl who now finds herself in heaven (somehow) and has to prove god's wrong. Luckily for her, she has a "long-lost" friend that not even her remembers...
 
-There's an easter egg at the end of the game, to unlock it you need a code.
+There's a secret note at the end of the game, to unlock it you need a code.
 
 ## Controls:
 - [ Arrows or D-Pad ] Move

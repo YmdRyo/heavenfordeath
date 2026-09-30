@@ -875,3 +875,56 @@ function completeTypewriter() {
     }
     isTyping = false;
 }
+
+const pinTranslations = {
+    'en': {
+        title: "Type the 4-Digit Pin",
+        cancel: "Cancel",
+        accept: "Accept",
+        error: "Wrong PIN, look around in chapter 5 to find it"
+    },
+    'es': {
+        title: "Introduce el PIN de 4 dígitos",
+        cancel: "Cancelar",
+        accept: "Aceptar",
+        error: "PIN incorrecto, busca en el capítulo 5 para encontrarlo"
+    },
+    'cn': {
+        title: "请输入4位密码",
+        cancel: "取消",
+        accept: "确认",
+        error: "密码错误，请在第5章附近寻找线索"
+    },
+    'jp': {
+        title: "4桁の暗証番号を入力",
+        cancel: "キャンセル",
+        accept: "決定",
+        error: "暗証番号が違います。第5章を探してみてください"
+    },
+    'ru': {
+        title: "Введите 4-значный ПИН-код",
+        cancel: "Отмена",
+        accept: "Принять",
+        error: "Неверный ПИН-код, поищите в главе 5"
+    },
+    'pt': {
+        title: "Digite o PIN de 4 dígitos",
+        cancel: "Cancelar",
+        accept: "Aceitar",
+        error: "PIN incorreto, procure pelo capítulo 5 para encontrá-lo"
+    }
+};
+
+function updatePinModalLanguage(lang) {
+    const t = pinTranslations[lang] || pinTranslations['en'];
+
+    const pinTitle = document.getElementById('pinTitle');
+    const btnPinCancel = document.getElementById('btnPinCancel');
+    const btnPinAccept = document.getElementById('btnPinAccept');
+    const pinError = document.getElementById('pinError');
+
+    if (pinTitle) pinTitle.textContent = t.title;
+    if (btnPinCancel) btnPinCancel.textContent = t.cancel;
+    if (btnPinAccept) btnPinAccept.textContent = t.accept;
+    if (pinError) pinError.textContent = t.error;
+}

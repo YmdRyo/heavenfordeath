@@ -81,11 +81,11 @@
         <!-- 4-Digit PIN for note -->
         <div id="pinModal" class="note-modal" style="display: none;">
             <div class="note-modal-content">
-                <h3>Type the 4-Digit Pin</h3>
-                <input type="password" id="pinInput" maxlength="4" onkeydown="event.stopPropagation();" />
+                <h3 id="pinTitle">Type the 4-Digit Pin</h3>
+                <input type="text" id="pinInput" maxlength="4" inputmode="numeric" pattern="[0-9]*" autocomplete="off" onkeydown="event.stopPropagation();" />
                 <div class="pin-buttons">
-                    <button onclick="closePinModal()">Cancel</button>
-                    <button onclick="validatePin()">Accept</button>
+                    <button id="btnPinCancel" onclick="closePinModal()">Cancel</button>
+                    <button id="btnPinAccept" onclick="validatePin()">Accept</button>
                 </div>
                 <p id="pinError" style="color: #ff5555; display: none;">Wrong PIN, look around in chapter 5 to find it</p>
             </div>
@@ -114,11 +114,11 @@
 
             <div id="editControlsLayout" class="edit-panel" style="display: none;">
                 <div class="slider-group">
-                    <label id="lblSize">Tamaño</label>
+                    <label id="lblSize">Size</label>
                     <input type="range" id="sizeSlider" min="0.5" max="1.8" step="0.1" value="1" oninput="updateActiveElementSize(this.value)">
                 </div>
                 <div class="slider-group">
-                    <label id="lblAlpha">Opacidad</label>
+                    <label id="lblAlpha">Opacity</label>
                     <input type="range" id="alphaSlider" min="0.2" max="1" step="0.1" value="1" oninput="updateActiveElementAlpha(this.value)">
                 </div>
                 <div class="btn-group">
@@ -204,6 +204,10 @@
 
                 if (typeof updateTouchControlsLanguage === 'function') {
                     updateTouchControlsLanguage(lang);
+                }
+
+                if (typeof updatePinModalLanguage === 'function') {
+                        updatePinModalLanguage(lang);
                 }
 
                 if (typeof DataManager !== 'undefined' && DataManager.loadDatabase) {

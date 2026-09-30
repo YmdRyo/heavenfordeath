@@ -28,6 +28,7 @@
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/mobile_controls.js"></script>
+        <script type="text/javascript" src="js/note_system.js"></script>
 
         <!-- Languages -->
         <div id="language-selector" class="lang-overlay">
@@ -71,6 +72,38 @@
             <button onclick="toggleFullScreen()" class="img-button">
                 <img src="img/system/btn_fullscreen.png" alt="Pantalla Completa">
             </button>
+        </div>
+
+        <div id="note-access-container" style="display: none;">
+            <img id="btnNote" src="img/system/btn_note2.png" alt="Read note" onclick="openPinModal()">
+        </div>
+
+        <!-- 4-Digit PIN for note -->
+        <div id="pinModal" class="note-modal" style="display: none;">
+            <div class="note-modal-content">
+                <h3>Type the 4-Digit Pin</h3>
+                <input type="password" id="pinInput" maxlength="4" onkeydown="event.stopPropagation();" />
+                <div class="pin-buttons">
+                    <button onclick="closePinModal()">Cancel</button>
+                    <button onclick="validatePin()">Accept</button>
+                </div>
+                <p id="pinError" style="color: #ff5555; display: none;">Wrong PIN, look around in chapter 5 to find it</p>
+            </div>
+        </div>
+
+        <!-- Note overlay -->
+        <div id="noteViewerModal" class="note-modal" style="display: none;">
+            <div class="note-viewer-container">
+                <div class="note-wrapper">
+                    <img id="noteImage" src="" alt="Note">
+                    
+                    <div id="noteTextBox" onclick="nextNoteStep()">
+                        <p id="noteTextContent"></p>
+                    </div>
+                    
+                    <span class="next-indicator">▼</span>
+                </div>
+            </div>
         </div>
 
         <!-- Phone layer -->

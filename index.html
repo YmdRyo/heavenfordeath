@@ -243,5 +243,13 @@
                 ]
             };
         </script>
+
+        <script type="text/javascript">
+            document.addEventListener('mouseup', function(e) {
+                if (e.target.closest('button, .img-button')) {
+                    document.activeElement.blur();
+                }
+            });
+        </script>
     </body>
 </html>

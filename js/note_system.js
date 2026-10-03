@@ -67,12 +67,28 @@ function getCurrentLang() {
     return lang;
 }
 
+function preloadNoteImages() {
+    return Promise.all(
+        Object.values(IMAGE_MAP).map((src) => {
+            if (!src || src.endsWith('black.png')) return Promise.resolve();
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = resolve;
+                img.onerror = resolve;
+                img.src = src;
+            });
+        })
+    );
+}
+
 async function startNoteViewer() {
     disableGameInput();
 
     if (typeof AudioManager !== 'undefined') {
         AudioManager.stopBgm();
     }
+
+    await preloadNoteImages();
 
     document.getElementById('noteViewerModal').style.display = 'flex';
 

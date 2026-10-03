@@ -17,6 +17,14 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://ymdryo.github.io/heavenfordeath/">
         <meta property="og:image" content="https://ymdryo.github.io/heavenfordeath/img/titles1/Castle.png">
+
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./sw.js');
+            });
+          }
+        </script>
     </head>
     <body style="background-color: black">
         <!-- RPGMaker scripts -->

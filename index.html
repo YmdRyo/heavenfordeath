@@ -99,19 +99,21 @@
         </div>
 
         <!-- Note overlay -->
-        <div id="noteViewerModal" class="note-modal" style="display: none;">
-            <div class="note-viewer-container">
-                <div class="note-wrapper">
-                    <img id="noteImage" src="" alt="Note">
-                    
-                    <div id="noteTextBox" onclick="nextNoteStep()">
-                        <p id="noteTextContent"></p>
-                    </div>
-                    
-                    <span class="next-indicator">▼</span>
-                </div>
+    <div id="noteViewerModal" class="note-modal" style="display: none;">
+        <div class="note-paper-container">
+            <div id="noteScrollProgress"></div>
+
+            <button id="btnCloseNote" onclick="closeNoteViewer()">&times;</button>
+            
+            <div id="noteScrollArea">
+                <div id="noteTextContent"></div>
+            </div>
+
+            <div class="note-image-panel">
+                <img id="noteImage" src="" alt="Note Image">
             </div>
         </div>
+    </div>
 
         <!-- Phone layer -->
         <div id="touch-controls-container">

@@ -454,8 +454,8 @@ canvas {
 
 .note-paper-container {
     position: relative;
-    width: 80vw;
-    max-width: 1000px;
+    width: 95vw;
+    max-width: 1400px;
     height: 85vh;
     background: #000000;
     border: none;
@@ -463,8 +463,8 @@ canvas {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    padding: 35px;
-    overflow: visible; 
+    padding: 30px;
+    overflow: visible;
     color: #000000;
 }
 
@@ -500,12 +500,12 @@ canvas {
 }
 
 #noteScrollArea {
-    flex: 1;
+    flex: 0 0 45%;
+    max-width: 45%;
     height: 100%;
     overflow-y: auto;
-    padding-right: 30px;
+    padding-right: 20px;
     box-sizing: border-box;
-    
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -529,23 +529,27 @@ canvas {
 }
 
 .note-image-panel {
-    position: relative;
-    width: 50%;
-    height: 120%;
+    flex: 0 0 55%;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    padding-left: 20px;
     pointer-events: none;
+    position: relative;
     overflow: visible;
 }
 
 #noteImage {
-    width: 200%;
-    max-width: none;
-    max-height: 160%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
+    
+    transform: translateX(5%) translateY(25%) scale(1.65); 
+    transform-origin: center center;
+
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.95));

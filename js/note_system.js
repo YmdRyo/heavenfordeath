@@ -196,11 +196,13 @@ function changeImageWithFade(newSrc) {
     imgElem.style.opacity = '0';
 
     setTimeout(() => {
-        if (newSrc) {
+        if (newSrc && newSrc !== 'NONE') {
             imgElem.src = newSrc;
+            imgElem.style.display = 'block';
             imgElem.style.opacity = '1';
         } else {
             imgElem.src = '';
+            imgElem.style.display = 'none';
         }
     }, 500);
 }

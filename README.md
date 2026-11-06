@@ -39,6 +39,8 @@ Portuguese Localization: @isa_bi21 on Discord
 
 Russian Localization: [kirrel50](https://t.me/porfenal), [KEL](https://t.me/Tetonationdetonation_tl) and [Damir Dorcas](https://vk.com/heaven_for_death)
 
+Vietnamese Localization: [WFs Team](https://www.facebook.com/profile.php?id=100087906331513)
+
 Official [Itch.io](https://yiminghack.itch.io/heaven-for-death) download page
 
 Development Tool: RPG Maker MV

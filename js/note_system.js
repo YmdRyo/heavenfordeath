@@ -59,7 +59,7 @@ function getCurrentLang() {
         lang = lang.toLowerCase().substring(0, 2);
     }
 
-    const supportedLangs = ['es', 'en', 'pt', 'jp', 'ru', 'cn'];
+    const supportedLangs = ['es', 'en', 'pt', 'jp', 'ru', 'cn', 'vn'];
     if (!lang || !supportedLangs.includes(lang)) {
         lang = 'en';
     }
@@ -382,6 +382,12 @@ const pinTranslations = {
         cancel: "Cancelar",
         accept: "Aceitar",
         error: "PIN incorreto, procure pelo capítulo 5 para encontrá-lo"
+    },
+    'vn': {
+        title: "Nhập mã PIN 4 chữ số",
+        cancel: "Hủy",
+        accept: "Đồng ý",
+        error: "Sai mã PIN, hãy tìm xung quanh chương 5 để thấy mã"
     }
 };
 

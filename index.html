@@ -48,7 +48,7 @@
         <!-- Languages -->
         <div id="language-selector" class="lang-overlay">
             <div class="lang-box">
-                <h2>语言 / 言語 / Language / Idioma / язык / linguagem</h2>
+                <h2>语言 / 言語 / Language / Idioma / язык / linguagem / Ngôn ngữ</h2>
                 <div class="lang-buttons">
                     <button onclick="selectLanguage('cn')" class="img-button">
                         <img src="img/system/lang_cn.png" alt="简体中文">
@@ -67,6 +67,9 @@
                     </button>
                     <button onclick="selectLanguage('pt')" class="img-button">
                         <img src="img/system/lang_pt.png" alt="Português">
+                    </button>
+                    <button onclick="selectLanguage('vn')" class="img-button">
+                        <img src="img/system/lang_vn.png" alt="Tiếng Việt">
                     </button>
                 </div>
             </div>
@@ -201,6 +204,8 @@
                     fontFile = "24.ttf";
                 } else if (lang === 'jp') {
                     fontFile = "TT_Pearl-L.woff";
+                } else if (lang === 'vn') {
+                    fontFile = "TT_Pearl-L.ttf";
                 }
 
                 var dynamicStyle = document.getElementById('dynamic-font-style');

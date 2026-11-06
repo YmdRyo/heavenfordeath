@@ -337,7 +337,8 @@ const touchTranslations = {
     'cn': { size: '大小', opacity: '不透明度', reset: '重置', cancel: '取消', apply: '应用' },
     'jp': { size: 'サイズ', opacity: '不透明度', reset: 'リセット', cancel: 'キャンセル', apply: '適用' },
     'ru': { size: 'Размер', opacity: 'Прозрачность', reset: 'Сброс', cancel: 'Отмена', apply: 'Применить' },
-    'pt': { size: 'Tamanho', opacity: 'Opacidade', reset: 'Redefinir', cancel: 'Cancelar', apply: 'Aplicar' }
+    'pt': { size: 'Tamanho', opacity: 'Opacidade', reset: 'Redefinir', cancel: 'Cancelar', apply: 'Aplicar' },
+    'vn': { size: 'Kích thước', opacity: 'Độ mờ', reset: 'Đặt lại', cancel: 'Hủy', apply: 'Áp dụng' }
 };
 
 function updateTouchControlsLanguage(lang) {

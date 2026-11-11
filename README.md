@@ -29,8 +29,6 @@ There's a secret note at the end of the game, to unlock it you need a code.
   </tr>
 </table>
 
-# [PLAY HERE](https://ymdryo.github.io/heavenfordeath/)
-
 ## Credits
 I'm not affiliated in any way with the developers, I'm just a guy who wanted more people to play this and that's it, so all credits go to:
 
@@ -86,6 +84,7 @@ Aigei (Sound Effects) https://www.aigei.com
 NetEase Cloud Music https://music.163.com
 Thank you very much.
 
+# [PLAY HERE](https://ymdryo.github.io/heavenfordeath/)
 <p align="center">
-  <img src="img/system/CG18.png" alt="README 1" width="100%">
+  <img src="img/pictures/CG18.png" alt="README 1" width="100%">
 </p>

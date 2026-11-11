@@ -229,6 +229,30 @@ canvas {
     text-align: center;
     color: #ffffff;
     font-family: sans-serif;
+    max-width: 90vw;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.game-description {
+    color: #888888;
+    font-family: GameFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: normal;
+    max-width: 45vw;
+    margin: 14px auto 0;
+    letter-spacing: 0.2px;
+    opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+    .game-description {
+        font-size: 12px;
+        line-height: 1.6;
+        max-width: 90vw;
+        margin-top: 10px;
+    }
 }
 
 .lang-buttons {

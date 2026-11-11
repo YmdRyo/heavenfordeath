@@ -1,16 +1,38 @@
-# [Heaven for Death [BROWSER]](https://ymdryo.github.io/heavenfordeath/)
+<p align="center">
+  <img src="img/system/HfD Artwork by Starko on PIXIV.png" alt="HfD Artwork by Starko on PIXIV" width="100%">
+</p>
 
+<p align="center">
+  <img src="img/system/README 1" alt="README 1" width="100%">
+</p>
 Heaven for Death tells the story of Ryo Yamada, a girl who now finds herself in heaven (somehow) and has to prove god's wrong. Luckily for her, she has a "long-lost" friend that not even her remembers...
 
 [Play here](https://ymdryo.github.io/heavenfordeath/)
 
 There's a secret note at the end of the game, to unlock it you need a code.
 
-## Controls:
+## Controls
 - [ Arrows or D-Pad ] Move
 - [ Z ]  Interact
 - [ X ] Cancel an action or open the menu
 - You can't jump
+
+## Gallery
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="img/pictures/CG14.5.png" alt="README 2" width="100%"><br>
+    </td>
+    <td align="center">
+      <img src="img/pictures/CG8.png" alt="README 3" width="100%"><br>
+    </td>
+    <td align="center">
+      <img src="img/pictures/CG4.png" alt="README 4" width="100%"><br>
+    </td>
+  </tr>
+</table>
+
+# [PLAY HERE]](https://ymdryo.github.io/heavenfordeath/)
 
 ## Credits
 I'm not affiliated in any way with the developers, I'm just a guy who wanted more people to play this and that's it, so all credits go to:
@@ -66,3 +88,7 @@ Aigei (Sound Effects) https://www.aigei.com
 
 NetEase Cloud Music https://music.163.com
 Thank you very much.
+
+<p align="center">
+  <img src="img/system/CG18.png" alt="README 1" width="100%">
+</p>

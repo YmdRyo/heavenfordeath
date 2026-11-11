@@ -2,29 +2,105 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <!-- Mobile compatibility -->
         <meta name="viewport" content="user-scalable=no">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style"
+              content="black-translucent">
+
+        <!-- SEO -->
+        <title>Heaven For Death - Play in Your Browser | Web Port</title>
+
+        <meta name="description"
+              content="Play Heaven For Death directly in your browser! A multilingual web port of the Bocchi the Rock! fan game, with mobile support and additional features.">
+
+        <meta name="robots" content="index, follow">
+
+        <link rel="canonical"
+              href="https://ymdryo.github.io/heavenfordeath/">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+
+        <meta property="og:site_name" content="Heaven For Death">
+
+        <meta property="og:title"
+              content="Heaven For Death - Play in Your Browser">
+
+        <meta property="og:description"
+              content="Play Heaven For Death directly in your browser! A multilingual browser port with mobile support.">
+
+        <meta property="og:url"
+              content="https://ymdryo.github.io/heavenfordeath/">
+
+        <meta property="og:image"
+              content="https://ymdryo.github.io/heavenfordeath/img/system/HfD Artwork by Starko on PIXIV.png">
+
+        <meta property="og:image:alt"
+              content="Heaven For Death artwork by STARKO on PIXIV">
+
+        <meta property="og:locale" content="en_US">
+
+        <!-- Twitter / X preview -->
+        <meta name="twitter:card" content="summary_large_image">
+
+        <meta name="twitter:title"
+              content="Heaven For Death - Play in Your Browser">
+
+        <meta name="twitter:description"
+              content="Play Heaven For Death directly in your browser! A multilingual browser port with mobile support.">
+
+        <meta name="twitter:image"
+              content="https://ymdryo.github.io/heavenfordeath/img/system/HfD Artwork by Starko on PIXIV.png">
+
+        <!-- Icons -->
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
+
+        <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
         <link rel="stylesheet" type="text/css" href="css/game.css">
-        <title>Heaven For Death</title>
 
-        <meta name="description" content="Play Heaven for Death from your browser on any device. A Bocchi The Rock! fangame.">
-        <meta property="og:title" content="Heaven for Death - WEB">
-        <meta property="og:description" content="Click here to play from your browser.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://ymdryo.github.io/heavenfordeath/">
-        <meta property="og:image" content="https://ymdryo.github.io/heavenfordeath/img/titles1/Castle.png">
-
-        <script>
-          if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('./sw.js');
-            });
-          }
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": ["VideoGame", "WebApplication"],
+          "name": "Heaven For Death",
+          "alternateName": "Heaven For Death Web Port",
+          "url": "https://ymdryo.github.io/heavenfordeath/",
+          "image": "https://ymdryo.github.io/heavenfordeath/img/system/HfD Artwork by Starko on PIXIV.png",
+          "description": "A multilingual browser port of Heaven For Death, a Bocchi the Rock! fan game.",
+          "applicationCategory": "GameApplication",
+          "gamePlatform": "Web browser",
+          "genre": "Role-playing game",
+          "browserRequirements": "A modern web browser with JavaScript enabled",
+          "inLanguage": [
+            "en",
+            "es",
+            "ja",
+            "zh-CN",
+            "ru",
+            "pt",
+            "vi"
+          ],
+          "isBasedOn": "https://yiminghack.itch.io/heaven-for-death"
+        }
         </script>
+
+        <!-- Service Worker -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js');
+                });
+            }
+        </script>
+
+        <!-- Google Site Verification -->
+        <meta name="google-site-verification" content="Jv6ZBjyZ6GtmSEiQeYnpVaFz0lSFGgOYzvqHIUp3SnU" />
     </head>
     <body style="background-color: black">
         <!-- RPGMaker scripts -->

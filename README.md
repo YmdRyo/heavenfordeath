@@ -3,11 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="img/system/README 1" alt="README 1" width="100%">
+  <img src="img/system/README 1.png" alt="README 1" width="100%">
 </p>
-Heaven for Death tells the story of Ryo Yamada, a girl who now finds herself in heaven (somehow) and has to prove god's wrong. Luckily for her, she has a "long-lost" friend that not even her remembers...
-
-[Play here](https://ymdryo.github.io/heavenfordeath/)
 
 There's a secret note at the end of the game, to unlock it you need a code.
 
@@ -32,7 +29,7 @@ There's a secret note at the end of the game, to unlock it you need a code.
   </tr>
 </table>
 
-# [PLAY HERE]](https://ymdryo.github.io/heavenfordeath/)
+# [PLAY HERE](https://ymdryo.github.io/heavenfordeath/)
 
 ## Credits
 I'm not affiliated in any way with the developers, I'm just a guy who wanted more people to play this and that's it, so all credits go to:

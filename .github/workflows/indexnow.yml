@@ -1,0 +1,57 @@
+name: IndexNow Notification
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'js/**'
+      - 'css/**'
+      - 'data/**'
+      - 'img/**'
+      - 'audio/**'
+      - 'fonts/**'
+      - 'icon/**'
+      - 'live2d/**'
+      - 'sw.js'
+      - 'sitemap.xml'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          set -euo pipefail
+
+          PAYLOAD=$(jq -n \
+            --arg host "ymdryo.github.io" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://ymdryo.github.io/heavenfordeath/18579ba8-8a01-4edd-96ad-077026953db5.txt" \
+            --arg url "https://ymdryo.github.io/heavenfordeath/" \
+            '{
+              host: $host,
+              key: $key,
+              keyLocation: $keyLocation,
+              urlList: [$url]
+            }')
+
+          STATUS=$(curl -sS \
+            -o response.txt \
+            -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD")
+
+          echo "IndexNow HTTP status: $STATUS"
+          cat response.txt
+
+          if [ "$STATUS" != "200" ] && [ "$STATUS" != "202" ]; then
+            echo "IndexNow notification failed."
+            exit 1
+          fi
